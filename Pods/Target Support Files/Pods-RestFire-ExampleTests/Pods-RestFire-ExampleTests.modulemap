@@ -1,0 +1,6 @@
+framework module Pods_RestFire_ExampleTests {
+  umbrella header "Pods-RestFire-ExampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

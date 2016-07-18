@@ -1,0 +1,744 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94B3DB8B25A65B21340994AB /* Pods_RestFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 775F7EFD74928E4DA19A84BF /* Pods_RestFire.framework */; };
+		C8F629C35231FA2CD3FE51FF /* Pods_RestFire_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C566FB5549F260BA678CFE6 /* Pods_RestFire_Example.framework */; };
+		EAB76E33DE6F01D94B39E493 /* Pods_RestFire_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E733CA4D08D7A9CCF8647CB4 /* Pods_RestFire_ExampleTests.framework */; };
+		ED618DA31D229A9E006CC922 /* RestFireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED618D9F1D229A9E006CC922 /* RestFireRequest.swift */; };
+		ED618DA51D229A9E006CC922 /* RestFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED618DA11D229A9E006CC922 /* RestFire.swift */; };
+		ED618DA61D229A9E006CC922 /* RestFireFileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED618DA21D229A9E006CC922 /* RestFireFileResponse.swift */; };
+		ED967B1C1D23EB2100C493B1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED967B1B1D23EB2100C493B1 /* SwiftyJSON.framework */; };
+		EDA87C451D264D9D00713879 /* RestFireResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED398D3C1D25392A00EAE529 /* RestFireResponse.swift */; };
+		EDB029991D20FCD700A59297 /* RestFire.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB029981D20FCD700A59297 /* RestFire.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDCB4AAA1D23E913008A1214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB4AA91D23E913008A1214 /* AppDelegate.swift */; };
+		EDCB4AAC1D23E913008A1214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB4AAB1D23E913008A1214 /* ViewController.swift */; };
+		EDCB4AAF1D23E913008A1214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCB4AAD1D23E913008A1214 /* Main.storyboard */; };
+		EDCB4AB11D23E913008A1214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCB4AB01D23E913008A1214 /* Assets.xcassets */; };
+		EDCB4AB41D23E913008A1214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCB4AB21D23E913008A1214 /* LaunchScreen.storyboard */; };
+		EDCB4ABF1D23E913008A1214 /* RestFire_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCB4ABE1D23E913008A1214 /* RestFire_ExampleTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDCB4ABB1D23E913008A1214 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB0298C1D20FCD700A59297 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDCB4AA61D23E913008A1214;
+			remoteInfo = "RestFire-Example";
+		};
+		EDCB4AC81D23E9A6008A1214 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDB0298C1D20FCD700A59297 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB029941D20FCD700A59297;
+			remoteInfo = RestFire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C566FB5549F260BA678CFE6 /* Pods_RestFire_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestFire_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E64CC62EAA332E06B38FE6C /* Pods-RestFire-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestFire-ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RestFire-ExampleTests/Pods-RestFire-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		5FB30FCD6BC52D6629880845 /* Pods-RestFire-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestFire-ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestFire-ExampleTests/Pods-RestFire-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		775F7EFD74928E4DA19A84BF /* Pods_RestFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79177884B6B3972318412B3B /* Pods-RestFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestFire/Pods-RestFire.debug.xcconfig"; sourceTree = "<group>"; };
+		ADFFDEEA26915FCC192F8C2A /* Pods-RestFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestFire.release.xcconfig"; path = "Pods/Target Support Files/Pods-RestFire/Pods-RestFire.release.xcconfig"; sourceTree = "<group>"; };
+		BCA3598A7ACFD8DE4577CCE3 /* Pods-RestFire-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestFire-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RestFire-Example/Pods-RestFire-Example.release.xcconfig"; sourceTree = "<group>"; };
+		DD3CCE5EA2592D2554EAAD18 /* Pods-RestFire-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestFire-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestFire-Example/Pods-RestFire-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E733CA4D08D7A9CCF8647CB4 /* Pods_RestFire_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestFire_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED398D3C1D25392A00EAE529 /* RestFireResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestFireResponse.swift; path = Classes/RestFireResponse.swift; sourceTree = "<group>"; };
+		ED618D9F1D229A9E006CC922 /* RestFireRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestFireRequest.swift; path = Classes/RestFireRequest.swift; sourceTree = "<group>"; };
+		ED618DA11D229A9E006CC922 /* RestFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestFire.swift; path = Classes/RestFire.swift; sourceTree = "<group>"; };
+		ED618DA21D229A9E006CC922 /* RestFireFileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestFireFileResponse.swift; path = Classes/RestFireFileResponse.swift; sourceTree = "<group>"; };
+		ED967B1B1D23EB2100C493B1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/RestFire-bnhmopksqvcgvdftktteipkzzuis/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		EDB029951D20FCD700A59297 /* RestFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RestFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB029981D20FCD700A59297 /* RestFire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestFire.h; sourceTree = "<group>"; };
+		EDB0299A1D20FCD700A59297 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCB4AA71D23E913008A1214 /* RestFire-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RestFire-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCB4AA91D23E913008A1214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDCB4AAB1D23E913008A1214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDCB4AAE1D23E913008A1214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDCB4AB01D23E913008A1214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDCB4AB31D23E913008A1214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDCB4AB51D23E913008A1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCB4ABA1D23E913008A1214 /* RestFire-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RestFire-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCB4ABE1D23E913008A1214 /* RestFire_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestFire_ExampleTests.swift; sourceTree = "<group>"; };
+		EDCB4AC01D23E913008A1214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB029911D20FCD700A59297 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94B3DB8B25A65B21340994AB /* Pods_RestFire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCB4AA41D23E913008A1214 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED967B1C1D23EB2100C493B1 /* SwiftyJSON.framework in Frameworks */,
+				C8F629C35231FA2CD3FE51FF /* Pods_RestFire_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCB4AB71D23E913008A1214 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAB76E33DE6F01D94B39E493 /* Pods_RestFire_ExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040A43008739648021CDC935 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED967B1B1D23EB2100C493B1 /* SwiftyJSON.framework */,
+				775F7EFD74928E4DA19A84BF /* Pods_RestFire.framework */,
+				0C566FB5549F260BA678CFE6 /* Pods_RestFire_Example.framework */,
+				E733CA4D08D7A9CCF8647CB4 /* Pods_RestFire_ExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE30AD2BD7FFD5CACA965B70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79177884B6B3972318412B3B /* Pods-RestFire.debug.xcconfig */,
+				ADFFDEEA26915FCC192F8C2A /* Pods-RestFire.release.xcconfig */,
+				DD3CCE5EA2592D2554EAAD18 /* Pods-RestFire-Example.debug.xcconfig */,
+				BCA3598A7ACFD8DE4577CCE3 /* Pods-RestFire-Example.release.xcconfig */,
+				5FB30FCD6BC52D6629880845 /* Pods-RestFire-ExampleTests.debug.xcconfig */,
+				0E64CC62EAA332E06B38FE6C /* Pods-RestFire-ExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED618D9E1D229A8E006CC922 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ED618D9F1D229A9E006CC922 /* RestFireRequest.swift */,
+				ED398D3C1D25392A00EAE529 /* RestFireResponse.swift */,
+				ED618DA11D229A9E006CC922 /* RestFire.swift */,
+				ED618DA21D229A9E006CC922 /* RestFireFileResponse.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		EDB0298B1D20FCD700A59297 = {
+			isa = PBXGroup;
+			children = (
+				ED618D9E1D229A8E006CC922 /* Classes */,
+				EDB029971D20FCD700A59297 /* RestFire */,
+				EDCB4AA81D23E913008A1214 /* RestFire-Example */,
+				EDCB4ABD1D23E913008A1214 /* RestFire-ExampleTests */,
+				EDB029961D20FCD700A59297 /* Products */,
+				040A43008739648021CDC935 /* Frameworks */,
+				BE30AD2BD7FFD5CACA965B70 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EDB029961D20FCD700A59297 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDB029951D20FCD700A59297 /* RestFire.framework */,
+				EDCB4AA71D23E913008A1214 /* RestFire-Example.app */,
+				EDCB4ABA1D23E913008A1214 /* RestFire-ExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB029971D20FCD700A59297 /* RestFire */ = {
+			isa = PBXGroup;
+			children = (
+				EDB029981D20FCD700A59297 /* RestFire.h */,
+				EDB0299A1D20FCD700A59297 /* Info.plist */,
+			);
+			path = RestFire;
+			sourceTree = "<group>";
+		};
+		EDCB4AA81D23E913008A1214 /* RestFire-Example */ = {
+			isa = PBXGroup;
+			children = (
+				EDCB4AA91D23E913008A1214 /* AppDelegate.swift */,
+				EDCB4AAB1D23E913008A1214 /* ViewController.swift */,
+				EDCB4AAD1D23E913008A1214 /* Main.storyboard */,
+				EDCB4AB01D23E913008A1214 /* Assets.xcassets */,
+				EDCB4AB21D23E913008A1214 /* LaunchScreen.storyboard */,
+				EDCB4AB51D23E913008A1214 /* Info.plist */,
+			);
+			path = "RestFire-Example";
+			sourceTree = "<group>";
+		};
+		EDCB4ABD1D23E913008A1214 /* RestFire-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDCB4ABE1D23E913008A1214 /* RestFire_ExampleTests.swift */,
+				EDCB4AC01D23E913008A1214 /* Info.plist */,
+			);
+			path = "RestFire-ExampleTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EDB029921D20FCD700A59297 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB029991D20FCD700A59297 /* RestFire.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EDB029941D20FCD700A59297 /* RestFire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB029A91D20FCD700A59297 /* Build configuration list for PBXNativeTarget "RestFire" */;
+			buildPhases = (
+				C504D3A5A7315AB7E859DFCF /* 📦 Check Pods Manifest.lock */,
+				EDB029901D20FCD700A59297 /* Sources */,
+				EDB029911D20FCD700A59297 /* Frameworks */,
+				EDB029921D20FCD700A59297 /* Headers */,
+				EDB029931D20FCD700A59297 /* Resources */,
+				655E0D281032563105350E2A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RestFire;
+			productName = RestFire;
+			productReference = EDB029951D20FCD700A59297 /* RestFire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EDCB4AA61D23E913008A1214 /* RestFire-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDCB4AC51D23E913008A1214 /* Build configuration list for PBXNativeTarget "RestFire-Example" */;
+			buildPhases = (
+				653B317192A9DE5846F27FFE /* 📦 Check Pods Manifest.lock */,
+				EDCB4AA31D23E913008A1214 /* Sources */,
+				EDCB4AA41D23E913008A1214 /* Frameworks */,
+				EDCB4AA51D23E913008A1214 /* Resources */,
+				55A1F848A1F9B15CDE1E1571 /* 📦 Embed Pods Frameworks */,
+				A7D05C5B08E4427586F50DD4 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDCB4AC91D23E9A6008A1214 /* PBXTargetDependency */,
+			);
+			name = "RestFire-Example";
+			productName = "RestFire-Example";
+			productReference = EDCB4AA71D23E913008A1214 /* RestFire-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDCB4AB91D23E913008A1214 /* RestFire-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDCB4AC61D23E913008A1214 /* Build configuration list for PBXNativeTarget "RestFire-ExampleTests" */;
+			buildPhases = (
+				E286FF66F3843D4326B25412 /* 📦 Check Pods Manifest.lock */,
+				EDCB4AB61D23E913008A1214 /* Sources */,
+				EDCB4AB71D23E913008A1214 /* Frameworks */,
+				EDCB4AB81D23E913008A1214 /* Resources */,
+				CA54CE5FFD6BD46F140CE794 /* 📦 Embed Pods Frameworks */,
+				D5B742168D13E09AC555320D /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDCB4ABC1D23E913008A1214 /* PBXTargetDependency */,
+			);
+			name = "RestFire-ExampleTests";
+			productName = "RestFire-ExampleTests";
+			productReference = EDCB4ABA1D23E913008A1214 /* RestFire-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB0298C1D20FCD700A59297 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Hucon Global AS";
+				TargetAttributes = {
+					EDB029941D20FCD700A59297 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					EDCB4AA61D23E913008A1214 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					EDCB4AB91D23E913008A1214 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = EDCB4AA61D23E913008A1214;
+					};
+				};
+			};
+			buildConfigurationList = EDB0298F1D20FCD700A59297 /* Build configuration list for PBXProject "RestFire" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDB0298B1D20FCD700A59297;
+			productRefGroup = EDB029961D20FCD700A59297 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDB029941D20FCD700A59297 /* RestFire */,
+				EDCB4AA61D23E913008A1214 /* RestFire-Example */,
+				EDCB4AB91D23E913008A1214 /* RestFire-ExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB029931D20FCD700A59297 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCB4AA51D23E913008A1214 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDCB4AB41D23E913008A1214 /* LaunchScreen.storyboard in Resources */,
+				EDCB4AB11D23E913008A1214 /* Assets.xcassets in Resources */,
+				EDCB4AAF1D23E913008A1214 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCB4AB81D23E913008A1214 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55A1F848A1F9B15CDE1E1571 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-Example/Pods-RestFire-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		653B317192A9DE5846F27FFE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		655E0D281032563105350E2A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire/Pods-RestFire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7D05C5B08E4427586F50DD4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-Example/Pods-RestFire-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C504D3A5A7315AB7E859DFCF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA54CE5FFD6BD46F140CE794 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-ExampleTests/Pods-RestFire-ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5B742168D13E09AC555320D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-ExampleTests/Pods-RestFire-ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E286FF66F3843D4326B25412 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB029901D20FCD700A59297 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED618DA51D229A9E006CC922 /* RestFire.swift in Sources */,
+				EDA87C451D264D9D00713879 /* RestFireResponse.swift in Sources */,
+				ED618DA61D229A9E006CC922 /* RestFireFileResponse.swift in Sources */,
+				ED618DA31D229A9E006CC922 /* RestFireRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCB4AA31D23E913008A1214 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDCB4AAC1D23E913008A1214 /* ViewController.swift in Sources */,
+				EDCB4AAA1D23E913008A1214 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDCB4AB61D23E913008A1214 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDCB4ABF1D23E913008A1214 /* RestFire_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDCB4ABC1D23E913008A1214 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDCB4AA61D23E913008A1214 /* RestFire-Example */;
+			targetProxy = EDCB4ABB1D23E913008A1214 /* PBXContainerItemProxy */;
+		};
+		EDCB4AC91D23E9A6008A1214 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB029941D20FCD700A59297 /* RestFire */;
+			targetProxy = EDCB4AC81D23E9A6008A1214 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDCB4AAD1D23E913008A1214 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDCB4AAE1D23E913008A1214 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDCB4AB21D23E913008A1214 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDCB4AB31D23E913008A1214 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB029A71D20FCD700A59297 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EDB029A81D20FCD700A59297 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EDB029AA1D20FCD700A59297 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79177884B6B3972318412B3B /* Pods-RestFire.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RestFire/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OlafAndreas.RestFire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDB029AB1D20FCD700A59297 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADFFDEEA26915FCC192F8C2A /* Pods-RestFire.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RestFire/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OlafAndreas.RestFire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EDCB4AC11D23E913008A1214 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD3CCE5EA2592D2554EAAD18 /* Pods-RestFire-Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "RestFire-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.OlafAndreas.RestFire-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDCB4AC21D23E913008A1214 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCA3598A7ACFD8DE4577CCE3 /* Pods-RestFire-Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "RestFire-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.OlafAndreas.RestFire-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EDCB4AC31D23E913008A1214 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FB30FCD6BC52D6629880845 /* Pods-RestFire-ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "RestFire-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.huconglobal.RestFire-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestFire-Example.app/RestFire-Example";
+			};
+			name = Debug;
+		};
+		EDCB4AC41D23E913008A1214 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E64CC62EAA332E06B38FE6C /* Pods-RestFire-ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "RestFire-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.huconglobal.RestFire-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestFire-Example.app/RestFire-Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB0298F1D20FCD700A59297 /* Build configuration list for PBXProject "RestFire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB029A71D20FCD700A59297 /* Debug */,
+				EDB029A81D20FCD700A59297 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB029A91D20FCD700A59297 /* Build configuration list for PBXNativeTarget "RestFire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB029AA1D20FCD700A59297 /* Debug */,
+				EDB029AB1D20FCD700A59297 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDCB4AC51D23E913008A1214 /* Build configuration list for PBXNativeTarget "RestFire-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDCB4AC11D23E913008A1214 /* Debug */,
+				EDCB4AC21D23E913008A1214 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDCB4AC61D23E913008A1214 /* Build configuration list for PBXNativeTarget "RestFire-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDCB4AC31D23E913008A1214 /* Debug */,
+				EDCB4AC41D23E913008A1214 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDB0298C1D20FCD700A59297 /* Project object */;
+}
