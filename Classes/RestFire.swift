@@ -45,6 +45,8 @@ public class RestFire {
     
     public func setToken(token: String){
         
+        RestFireRequest.token = token
+        
         self.accessToken = token
     }
 }

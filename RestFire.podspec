@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RestFire"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "A simple REST wrapper based on Alamofire."
 
   # This description is used to generate tags and improve search results.

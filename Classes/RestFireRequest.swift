@@ -30,10 +30,10 @@ public class RestFireRequest {
     var request: Request!
     
     private var url: String!
-    private static var token: String!
+    static var token: String!
     
     private var headers: [String: String] {
-        return ["Authorization": "Bearer \(RestFireRequest.token)",
+        return ["Authorization": "\(RestFireRequest.token)",
                 "Accept": "/json",
                 "Content-Type": "/json"]
     }
