@@ -29,7 +29,7 @@ public class RestFireRequest {
     
     var request: Request!
     
-    private var url: String!
+    public var url: String!
     static var token: String!
     
     private var headers: [String: String] {

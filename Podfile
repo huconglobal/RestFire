@@ -6,20 +6,22 @@ target 'RestFire' do
   use_frameworks!
 
   # Pods for RestFire
-  pod 'Alamofire', '~> 3.4'
+
+  pod 'Alamofire', '= 3.4.0'
   pod 'SwiftyJSON', '= 2.3.3'
 
   target 'RestFire-Example' do
     inherit! :search_paths
     # Pods for testing
-      pod 'Alamofire', '~> 3.4'
-      pod 'SwiftyJSON', '= 2.3.3'
+
+     pod 'Alamofire', '= 3.4.0'
+     pod 'SwiftyJSON', '= 2.3.3'
   end
 
   target 'RestFire-ExampleTests' do
     inherit! :search_paths
     # Pods for testing
-      pod 'Alamofire', '~> 3.4'
-      pod 'SwiftyJSON', '= 2.3.3'
+     pod 'Alamofire', '= 3.4.0'
+     pod 'SwiftyJSON', '= 2.3.3'
   end
 end

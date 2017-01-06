@@ -34,29 +34,34 @@ public class RestFireResponse {
         self.request = request
     }
     
-    public func response(completion: (JSON?, NSError?) -> ()) -> Request {
+    public func response(completion: (JSON?, Int, NSError?) -> ()) -> Request {
         
         return self.request.responseJSON(completionHandler: {
             response in
             
             if let error = response.result.error {
                 
-                return completion(nil , error)
+                return completion(nil, response.response?.statusCode ?? 0, error)
             }
             
             guard let data = response.data else {
                 
-                return completion(nil, NSError(domain: "RestFire", code: 0, userInfo: ["reason": "no data returned from server."]))
+                return completion(nil, response.response?.statusCode ?? 0, NSError(domain: "RestFire", code: 0, userInfo: ["reason": "No data returned from server."]))
             }
             
             let json = JSON(data: data)
             
-            if let array = json.array where array.count == 1 {
+            if let error = json.error {
             
-                return completion(json.first?.1, nil)
+                return completion(nil, response.response?.statusCode ?? 0, error)
             }
             
-            completion(json, nil)
+            if let array = json.array where array.count == 1 {
+            
+                return completion(json.first?.1, response.response?.statusCode ?? 0, nil)
+            }
+            
+            completion(json, response.response?.statusCode ?? 0, nil)
         })
     }
 }
