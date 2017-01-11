@@ -25,14 +25,14 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-public class RestFireRequest {
+open class RestFireRequest {
     
     var request: Request!
     
-    public var url: String!
+    open var url: String!
     static var token: String!
     
-    private var headers: [String: String] {
+    fileprivate var headers: [String: String] {
         return ["Authorization": "\(RestFireRequest.token)",
                 "Accept": "/json",
                 "Content-Type": "/json"]
@@ -45,93 +45,93 @@ public class RestFireRequest {
         RestFireRequest.token = token
     }
     
-    public subscript(path: AnyObject) -> RestFireRequest {
+    open subscript(path: AnyHashable) -> RestFireRequest {
         
         guard path is String || path is Int else {
             
             fatalError("Path must be of type Int or String")
         }
         
-        url.appendContentsOf("/\(path)")
+        url.append("/\(path)")
         
         return self
     }
     
     /// Create
-    public func post(parameters: [String: AnyObject]? = nil) -> RestFireResponse {
+    open func post(_ parameters: [String: AnyHashable]? = nil) -> RestFireResponse {
         
-        self.request = request(.POST, parameters: parameters, encoding: .JSON)
+        self.request = request(.post, parameters: parameters, encoding: JSONEncoding.default)
         
         return RestFireResponse(request: request)
     }
     
     /// Read
-    public func get(parameters: [String: AnyObject]? = nil) -> RestFireResponse {
+    open func get(_ parameters: [String: AnyHashable]? = nil) -> RestFireResponse {
         
-        self.request = request(.GET, parameters: parameters, encoding: .URLEncodedInURL)
+        self.request = request(.get, parameters: parameters, encoding: URLEncoding.httpBody)
         
         return RestFireResponse(request: request)
     }
     
     /// Create/Update
-    public func put(parameters: [String: AnyObject]) -> RestFireResponse {
+    open func put(_ parameters: [String: AnyHashable]) -> RestFireResponse {
         
-        self.request = request(.PUT, parameters: parameters, encoding: .JSON)
+        self.request = request(.put, parameters: parameters, encoding: JSONEncoding.default)
         
         return RestFireResponse(request: request)
     }
     
     /// Update
-    public func patch(parameters: [String: AnyObject]) -> RestFireResponse {
+    open func patch(_ parameters: [String: AnyHashable]) -> RestFireResponse {
         
-        self.request = request(.PATCH, parameters: parameters, encoding: .JSON)
+        self.request = request(.patch, parameters: parameters, encoding: JSONEncoding.default)
         
         return RestFireResponse(request: request)
     }
     
     /// Delete
-    public func delete() -> RestFireResponse {
+    open func delete() -> RestFireResponse {
         
-        self.request = request(.DELETE, parameters: nil, encoding: .JSON)
+        self.request = request(.delete, parameters: nil, encoding: JSONEncoding.default)
         
         return RestFireResponse(request: request)
     }
     
     /// Download
-    public func download(parameters: [String: AnyObject]? = nil, destination: String? = nil) -> RestFireFileResponse {
+    open func download(_ parameters: [String: AnyObject]? = nil, destination: String? = nil) -> RestFireFileResponse {
         
-        let urlRequest = NSMutableURLRequest(URL: NSURL(string: url)!)
-        urlRequest.HTTPMethod = "POST"
+        let urlRequest = NSMutableURLRequest(url: URL(string: url)!)
+        urlRequest.httpMethod = "POST"
         urlRequest.allHTTPHeaderFields = self.headers
         
-        let downloadRequest = Alamofire.ParameterEncoding.JSON.encode(urlRequest, parameters: parameters).0
+        let downloadRequest: URLRequestConvertible = try! JSONEncoding().encode(urlRequest as! URLRequestConvertible, with: parameters)
         
-        self.request = Alamofire.download(downloadRequest, destination: {
+        self.request = Alamofire.download(downloadRequest, to: {
             (tempUrl, response) in
             
             // Try to get the url for the Documents directory for this application
-            let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+            let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             
             // Get the suggested filename from the download response
             let pathComponent = response.suggestedFilename!
             
-            var fileUrl = directoryURL.URLByAppendingPathComponent(pathComponent)
+            var fileUrl = directoryURL.appendingPathComponent(pathComponent)
             
             // Check if another directory is defined
-            if let destination = destination, url = NSURL(string: destination) {
+            if let destination = destination, let url = NSURL(string: destination) {
                 
-                fileUrl = url.URLByAppendingPathComponent(pathComponent)
+                fileUrl = url.appendingPathComponent(pathComponent)!
             }
             
             // Append the suggested filename to the directory url
-            return fileUrl
+            return (fileUrl, DownloadRequest.DownloadOptions.removePreviousFile)
         })
         
         return RestFireFileResponse(request: self)
     }
     
-    private func request(method: Alamofire.Method, parameters: [String: AnyObject]? = nil, encoding: ParameterEncoding) -> Request {
+    open func request(_ method: HTTPMethod, parameters: [String: AnyHashable]? = nil, encoding: ParameterEncoding) -> Request {
         
-        return Alamofire.request(method, self.url, parameters: parameters, encoding: encoding, headers: headers)
+        return Alamofire.request(self.url, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 }
