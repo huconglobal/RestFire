@@ -16,12 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rest["comments"].post(["title": "Foo", "Author": "Mr. Bar"]).response {
-            value, error in
+        _ = rest["comments"].post(["title": "Foo", "Author": "Mr. Bar"]).response {
+            value, _, error in
             
-            print(error)
-            
-            print(value)
+            print(value ?? "no value")
+            print(error ?? "no error")
         }
     }
 }

@@ -24,49 +24,52 @@
 import Foundation
 import Alamofire
 
-public class RestFireFileResponse {
+open class RestFireFileResponse {
     
-    private var request: RestFireRequest!
-    private var progressClosure: ((Float) -> ())?
+    fileprivate var request: RestFireRequest!
+    fileprivate var progressClosure: ((Float) -> ())?
     
-    private let manager = Alamofire.Manager()
+    fileprivate let manager = Alamofire.SessionManager.default
     
     public init(request: RestFireRequest) {
         
         self.request = request
     }
     
-    public func progress(closure: (Float) -> ()) -> (RestFireFileResponse) {
+    open func progress(_ closure: @escaping (Float) -> ()) -> (RestFireFileResponse) {
         
         self.progressClosure = closure
         
         return self
     }
     
-    public func response(completion: (filename: String?, error: NSError?) -> ()) -> Request {
+    open func response(_ completion: @escaping (_ filename: String?, _ error: Error?) -> ()) -> Request {
         
-        return self.request.request
-            .progress {
-                (_, totalBytesRead, totalBytesExpectedToRead) in
-                
-                self.progressClosure?((Float(totalBytesRead) / Float(totalBytesExpectedToRead)))
-            }
-            .response {
-                (urlRequest, response, data, error) in
-                
-                if let error = error {
-                    
-                    return completion(filename: nil, error: error)
-                }
-                
-                guard let filename = response?.suggestedFilename else {
-                    
-                    let restError = NSError(domain: "RestFire", code: 0, userInfo: ["Reason": "No suggested filename available in download response."])
-                    
-                    return completion(filename: nil, error: restError)
-                }
-                
-                completion(filename: filename, error: nil)
+        guard let dataRequest = self.request.request as? DataRequest else {
+            
+            return self.request.request
         }
+        
+        return dataRequest.downloadProgress(closure: {
+            progress in
+            
+            self.progressClosure?(Float(progress.fractionCompleted))
+        }).response(completionHandler: {
+            data in
+            
+            if let error = data.error as? NSError {
+                
+                return completion(nil, error)
+            }
+            
+            guard let filename = data.response?.suggestedFilename else {
+                
+                let restError = NSError(domain: "RestFire", code: 0, userInfo: ["Reason": "No suggested filename available in download response."])
+                
+                return completion(nil, restError)
+            }
+            
+            completion(filename, nil)
+        })
     }
 }

@@ -25,11 +25,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-public class RestFire {
+open class RestFire {
     
-    private var baseUrl: String!
-    private var accessToken: String?
-    private var credentials: [String: String]?
+    fileprivate var baseUrl: String!
+    fileprivate var accessToken: String?
+    fileprivate var credentials: [String: String]?
     
     public init(baseUrl url: String, token: String? = nil) {
         
@@ -38,12 +38,12 @@ public class RestFire {
         self.accessToken = token
     }
     
-    public subscript(path: String) -> RestFireRequest {
+    open subscript(path: String) -> RestFireRequest {
         
-        return RestFireRequest(url: baseUrl.stringByAppendingString("/\(path)"), token: self.accessToken)
+        return RestFireRequest(url: baseUrl + "/\(path)", token: self.accessToken)
     }
     
-    public func setToken(token: String){
+    open func setToken(_ token: String){
         
         RestFireRequest.token = token
         

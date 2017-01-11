@@ -26,7 +26,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testPost(){
         
-        let expectation = expectationWithDescription("Async post")
+        let expectation = self.expectation(description: "Async post")
         
         rest["comments"].post(["title": "Foo", "Author": "Mr. Bar"]).response {
             value, error in
@@ -43,7 +43,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testGetSingle(){
         
-        let expectation = expectationWithDescription("Async get")
+        let expectation = self.expectation(description: "Async get")
         
         let postId = 1
         
@@ -56,7 +56,7 @@ class RestFire_ExampleTests: XCTestCase {
             
             XCTAssertNotNil(value)
             
-            guard let value = value, id = value["id"].int else {
+            guard let value = value, let id = value["id"].int else {
                 
                 return XCTFail("Invalid json response")
             }
@@ -69,7 +69,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testGetAll(){
         
-        let expectation = expectationWithDescription("Async get")
+        let expectation = self.expectation(description: "Async get")
         
         rest["posts"].get().response {
             value, error in
@@ -93,7 +93,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testGetCommentsForPost(){
         
-        let expectation = expectationWithDescription("Async get")
+        let expectation = self.expectation(description: "Async get")
         
         rest["posts"][1]["comments"].get().response {
             value, error in
@@ -115,7 +115,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testPut(){
         
-        let expectation = expectationWithDescription("Async get")
+        let expectation = self.expectation(description: "Async get")
         
         let postId = 1
         
@@ -128,7 +128,7 @@ class RestFire_ExampleTests: XCTestCase {
             
             XCTAssertNotNil(value)
             
-            guard let value = value, id = value["id"].int else {
+            guard let value = value, let id = value["id"].int else {
                 
                 return XCTFail("Invalid json response")
             }
@@ -141,7 +141,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testPatch(){
         
-        let expectation = expectationWithDescription("Async get")
+        let expectation = self.expectation(description: "Async get")
         
         let postId = 1
         
@@ -154,7 +154,7 @@ class RestFire_ExampleTests: XCTestCase {
             
             XCTAssertNotNil(value)
             
-            guard let value = value, id = value["id"].int else {
+            guard let value = value, let id = value["id"].int else {
                 
                 return XCTFail("Invalid json response")
             }
@@ -167,7 +167,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func testDelete(){
         
-        let expectation = expectationWithDescription("Async get")
+        let expectation = self.expectation(description: "Async get")
         
         let postId = 1
         
@@ -186,7 +186,7 @@ class RestFire_ExampleTests: XCTestCase {
     
     func expect() {
         
-        waitForExpectationsWithTimeout(3) {
+        waitForExpectations(timeout: 3) {
             error in
             
             if let error = error {
