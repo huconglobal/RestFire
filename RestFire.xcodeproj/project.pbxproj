@@ -207,12 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDB029A91D20FCD700A59297 /* Build configuration list for PBXNativeTarget "RestFire" */;
 			buildPhases = (
-				C504D3A5A7315AB7E859DFCF /* 📦 Check Pods Manifest.lock */,
+				C504D3A5A7315AB7E859DFCF /* [CP] Check Pods Manifest.lock */,
 				EDB029901D20FCD700A59297 /* Sources */,
 				EDB029911D20FCD700A59297 /* Frameworks */,
 				EDB029921D20FCD700A59297 /* Headers */,
 				EDB029931D20FCD700A59297 /* Resources */,
-				655E0D281032563105350E2A /* 📦 Copy Pods Resources */,
+				655E0D281032563105350E2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,12 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDCB4AC51D23E913008A1214 /* Build configuration list for PBXNativeTarget "RestFire-Example" */;
 			buildPhases = (
-				653B317192A9DE5846F27FFE /* 📦 Check Pods Manifest.lock */,
+				653B317192A9DE5846F27FFE /* [CP] Check Pods Manifest.lock */,
 				EDCB4AA31D23E913008A1214 /* Sources */,
 				EDCB4AA41D23E913008A1214 /* Frameworks */,
 				EDCB4AA51D23E913008A1214 /* Resources */,
-				55A1F848A1F9B15CDE1E1571 /* 📦 Embed Pods Frameworks */,
-				A7D05C5B08E4427586F50DD4 /* 📦 Copy Pods Resources */,
+				55A1F848A1F9B15CDE1E1571 /* [CP] Embed Pods Frameworks */,
+				A7D05C5B08E4427586F50DD4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDCB4AC61D23E913008A1214 /* Build configuration list for PBXNativeTarget "RestFire-ExampleTests" */;
 			buildPhases = (
-				E286FF66F3843D4326B25412 /* 📦 Check Pods Manifest.lock */,
+				E286FF66F3843D4326B25412 /* [CP] Check Pods Manifest.lock */,
 				EDCB4AB61D23E913008A1214 /* Sources */,
 				EDCB4AB71D23E913008A1214 /* Frameworks */,
 				EDCB4AB81D23E913008A1214 /* Resources */,
-				CA54CE5FFD6BD46F140CE794 /* 📦 Embed Pods Frameworks */,
-				D5B742168D13E09AC555320D /* 📦 Copy Pods Resources */,
+				CA54CE5FFD6BD46F140CE794 /* [CP] Embed Pods Frameworks */,
+				D5B742168D13E09AC555320D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,17 +272,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Hucon Global AS";
 				TargetAttributes = {
 					EDB029941D20FCD700A59297 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					EDCB4AA61D23E913008A1214 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J69ZPVRMCE;
+						LastSwiftMigration = 0820;
 					};
 					EDCB4AB91D23E913008A1214 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = EDCB4AA61D23E913008A1214;
 					};
 				};
@@ -335,14 +339,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		55A1F848A1F9B15CDE1E1571 /* 📦 Embed Pods Frameworks */ = {
+		55A1F848A1F9B15CDE1E1571 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,29 +354,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-Example/Pods-RestFire-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		653B317192A9DE5846F27FFE /* 📦 Check Pods Manifest.lock */ = {
+		653B317192A9DE5846F27FFE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		655E0D281032563105350E2A /* 📦 Copy Pods Resources */ = {
+		655E0D281032563105350E2A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,14 +384,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire/Pods-RestFire-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A7D05C5B08E4427586F50DD4 /* 📦 Copy Pods Resources */ = {
+		A7D05C5B08E4427586F50DD4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,29 +399,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-Example/Pods-RestFire-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C504D3A5A7315AB7E859DFCF /* 📦 Check Pods Manifest.lock */ = {
+		C504D3A5A7315AB7E859DFCF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CA54CE5FFD6BD46F140CE794 /* 📦 Embed Pods Frameworks */ = {
+		CA54CE5FFD6BD46F140CE794 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,14 +429,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-ExampleTests/Pods-RestFire-ExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D5B742168D13E09AC555320D /* 📦 Copy Pods Resources */ = {
+		D5B742168D13E09AC555320D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,19 +444,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RestFire-ExampleTests/Pods-RestFire-ExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E286FF66F3843D4326B25412 /* 📦 Check Pods Manifest.lock */ = {
+		E286FF66F3843D4326B25412 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -535,8 +539,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -584,8 +590,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -605,6 +613,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -616,7 +625,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79177884B6B3972318412B3B /* Pods-RestFire.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -628,6 +639,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -635,7 +647,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADFFDEEA26915FCC192F8C2A /* Pods-RestFire.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -646,6 +660,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OlafAndreas.RestFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -653,11 +668,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD3CCE5EA2592D2554EAAD18 /* Pods-RestFire-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J69ZPVRMCE;
 				INFOPLIST_FILE = "RestFire-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.OlafAndreas.RestFire-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -665,11 +683,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BCA3598A7ACFD8DE4577CCE3 /* Pods-RestFire-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J69ZPVRMCE;
 				INFOPLIST_FILE = "RestFire-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.OlafAndreas.RestFire-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -677,11 +698,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FB30FCD6BC52D6629880845 /* Pods-RestFire-ExampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "RestFire-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.huconglobal.RestFire-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestFire-Example.app/RestFire-Example";
 			};
 			name = Debug;
@@ -690,11 +713,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E64CC62EAA332E06B38FE6C /* Pods-RestFire-ExampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "RestFire-ExampleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.huconglobal.RestFire-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestFire-Example.app/RestFire-Example";
 			};
 			name = Release;

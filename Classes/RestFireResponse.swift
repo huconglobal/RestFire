@@ -25,18 +25,23 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-public class RestFireResponse {
+open class RestFireResponse {
     
-    private var request: Request!
+    fileprivate var request: Request!
     
     public init(request: Request) {
         
         self.request = request
     }
     
-    public func response(completion: (JSON?, Int, NSError?) -> ()) -> Request {
+    open func response(_ completion: @escaping (JSON?, Int, Error?) -> ()) -> Request {
         
-        return self.request.responseJSON(completionHandler: {
+        guard let dataRequest = self.request as? DataRequest else {
+        
+            return self.request
+        }
+        
+        return dataRequest.responseJSON(completionHandler: {
             response in
             
             if let error = response.result.error {
@@ -56,7 +61,7 @@ public class RestFireResponse {
                 return completion(nil, response.response?.statusCode ?? 0, error)
             }
             
-            if let array = json.array where array.count == 1 {
+            if let array = json.array, array.count == 1 {
             
                 return completion(json.first?.1, response.response?.statusCode ?? 0, nil)
             }
