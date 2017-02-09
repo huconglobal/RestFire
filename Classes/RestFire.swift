@@ -40,7 +40,7 @@ open class RestFire {
     
     open subscript(path: String) -> RestFireRequest {
         
-        return RestFireRequest(url: baseUrl + "/\(path)", token: self.accessToken)
+        return RestFireRequest(url: baseUrl + "/" + path, token: self.accessToken)
     }
     
     open func setToken(_ token: String){

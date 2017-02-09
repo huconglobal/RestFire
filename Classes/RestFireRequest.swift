@@ -33,7 +33,7 @@ open class RestFireRequest {
     static var token: String!
     
     fileprivate var headers: [String: String] {
-        return ["Authorization": "\(RestFireRequest.token)",
+        return ["Authorization": RestFireRequest.token,
                 "Accept": "/json",
                 "Content-Type": "/json"]
     }
