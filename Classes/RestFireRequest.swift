@@ -58,7 +58,7 @@ open class RestFireRequest {
     }
     
     /// Create
-    open func post(_ parameters: [String: AnyHashable]? = nil) -> RestFireResponse {
+    open func post(_ parameters: Parameters? = nil) -> RestFireResponse {
         
         self.request = request(.post, parameters: parameters, encoding: JSONEncoding.default)
         
@@ -66,7 +66,7 @@ open class RestFireRequest {
     }
     
     /// Read
-    open func get(_ parameters: [String: AnyHashable]? = nil) -> RestFireResponse {
+    open func get(_ parameters: Parameters? = nil) -> RestFireResponse {
         
         self.request = request(.get, parameters: parameters, encoding: URLEncoding.httpBody)
         
@@ -74,7 +74,7 @@ open class RestFireRequest {
     }
     
     /// Create/Update
-    open func put(_ parameters: [String: AnyHashable]) -> RestFireResponse {
+    open func put(_ parameters: Parameters) -> RestFireResponse {
         
         self.request = request(.put, parameters: parameters, encoding: JSONEncoding.default)
         
@@ -82,7 +82,7 @@ open class RestFireRequest {
     }
     
     /// Update
-    open func patch(_ parameters: [String: AnyHashable]) -> RestFireResponse {
+    open func patch(_ parameters: Parameters) -> RestFireResponse {
         
         self.request = request(.patch, parameters: parameters, encoding: JSONEncoding.default)
         
@@ -98,13 +98,13 @@ open class RestFireRequest {
     }
     
     /// Download
-    open func download(_ parameters: [String: AnyObject]? = nil, destination: String? = nil) -> RestFireFileResponse {
+    open func download(_ parameters: Parameters? = nil, destination: String? = nil) -> RestFireFileResponse {
         
-        let urlRequest = NSMutableURLRequest(url: URL(string: url)!)
-        urlRequest.httpMethod = "POST"
-        urlRequest.allHTTPHeaderFields = self.headers
+        var r = URLRequest(url: URL(string: url)!)
+        r.httpMethod = "POST"
+        r.allHTTPHeaderFields = self.headers
         
-        let downloadRequest: URLRequestConvertible = try! JSONEncoding().encode(urlRequest as! URLRequestConvertible, with: parameters)
+        let downloadRequest: URLRequestConvertible = try! JSONEncoding().encode(r, with: parameters)
         
         self.request = Alamofire.download(downloadRequest, to: {
             (tempUrl, response) in
@@ -115,12 +115,13 @@ open class RestFireRequest {
             // Get the suggested filename from the download response
             let pathComponent = response.suggestedFilename!
             
-            var fileUrl = directoryURL.appendingPathComponent(pathComponent)
+            // Get url by appending filename
+            var fileUrl: URL = directoryURL.appendingPathComponent(pathComponent)
             
             // Check if another directory is defined
-            if let destination = destination, let url = NSURL(string: destination) {
+            if let destination = destination, let url = URL(string: destination) {
                 
-                fileUrl = url.appendingPathComponent(pathComponent)!
+                fileUrl = url.appendingPathComponent(pathComponent)
             }
             
             // Append the suggested filename to the directory url
@@ -130,7 +131,7 @@ open class RestFireRequest {
         return RestFireFileResponse(request: self)
     }
     
-    open func request(_ method: HTTPMethod, parameters: [String: AnyHashable]? = nil, encoding: ParameterEncoding) -> Request {
+    open func request(_ method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding) -> Request {
         
         return Alamofire.request(self.url, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
