@@ -45,7 +45,7 @@ open class RestFireFileResponse {
     
     open func response(_ completion: @escaping (_ filename: String?, _ error: Error?) -> ()) -> Request {
         
-        guard let dataRequest = self.request.request as? DataRequest else {
+        guard let dataRequest = self.request.request as? DownloadRequest else {
             
             return self.request.request
         }
@@ -62,14 +62,16 @@ open class RestFireFileResponse {
                 return completion(nil, error)
             }
             
-            guard let filename = data.response?.suggestedFilename else {
+            guard let filename = dataRequest.response?.suggestedFilename else {
                 
-                let restError = NSError(domain: "RestFire", code: 0, userInfo: ["Reason": "No suggested filename available in download response."])
+                let error = NSError(domain: "RestFireFileResponse", code: 0, userInfo: ["reason": "No suggedsted filename returned from server."])
                 
-                return completion(nil, restError)
+                return completion(nil, error)
             }
             
-            completion(filename, nil)
+            let fileUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
+            
+            completion(fileUrl.path, nil)
         })
     }
 }
