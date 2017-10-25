@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "RestFire"
 
-  s.version      = "3.0.2"
+  s.version      = "3.0.3"
   s.summary      = "A simple REST wrapper based on Alamofire."
 
   # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   This wrapper extends Alamofire and makes for easy access to your REST API.
                    DESC
 
-  s.homepage     = "https://github.com/OlafAndreas/RestFire"
+  s.homepage     = "https://github.com/HuconGlobal/RestFire"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -81,7 +81,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/OlafAndreas/RestFire.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/HuconGlobal/RestFire.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
