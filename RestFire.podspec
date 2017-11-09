@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "RestFire"
 
-  s.version      = "3.0.3"
+  s.version      = "4.0.0"
   s.summary      = "A simple REST wrapper based on Alamofire."
 
   # This description is used to generate tags and improve search results.
@@ -134,7 +134,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "Alamofire", '= 4.2.0'
-  s.dependency "SwiftyJSON", '= 3.1.3'
+  s.dependency "Alamofire", '= 4.5.1'
+  s.dependency "SwiftyJSON", '= 4.0.0'
 
 end

@@ -57,7 +57,7 @@ open class RestFireFileResponse {
         }).response(completionHandler: {
             data in
             
-            if let error = data.error as? NSError {
+            if let error = data.error {
                 
                 return completion(nil, error)
             }
