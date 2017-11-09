@@ -54,19 +54,27 @@ open class RestFireResponse {
                 return completion(nil, response.response?.statusCode ?? 0, NSError(domain: "RestFire", code: 0, userInfo: ["reason": "No data returned from server."]))
             }
             
-            let json = JSON(data: data)
-            
-            if let error = json.error {
-            
-                return completion(nil, response.response?.statusCode ?? 0, error)
+            do {
+                
+                let json = try JSON(data: data)
+                
+                
+                if let error = json.error {
+                
+                    return completion(nil, response.response?.statusCode ?? 0, error)
+                }
+                
+                if let array = json.array, array.count == 1 {
+                
+                    return completion(json.first?.1, response.response?.statusCode ?? 0, nil)
+                }
+                
+                completion(json, response.response?.statusCode ?? 0, nil)
             }
-            
-            if let array = json.array, array.count == 1 {
-            
-                return completion(json.first?.1, response.response?.statusCode ?? 0, nil)
+            catch {
+                
+                completion(nil, response.response?.statusCode ?? 0, error)
             }
-            
-            completion(json, response.response?.statusCode ?? 0, nil)
         })
     }
 }
