@@ -30,10 +30,10 @@ open class RestFireRequest {
     var request: Request!
 
     open var url: String!
-    static var token: String!
+    static var token: String? = nil
 
     fileprivate var headers: [String: String] {
-        return ["Authorization": RestFireRequest.token,
+        return ["Authorization": RestFireRequest.token ?? "",
                 "Accept": "/json",
                 "Content-Type": "/json"]
     }
